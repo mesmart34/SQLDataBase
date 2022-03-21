@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "cd5a746b-259d-4ff1-b0c4-fb65f2ebff7f": {
+      "ProjectGuid": "cd5a746b-259d-4ff1-b0c4-fb65f2ebff7f",
+      "DisplayName": "SQLDataBase",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

@@ -1,0 +1,8 @@
+C:\Users\artem\Documents\SQLDataBase\SQLDataBase\obj\Debug\SQLDataBase.csproj.AssemblyReference.cache
+C:\Users\artem\Documents\SQLDataBase\SQLDataBase\obj\Debug\SQLDataBase.csproj.SuggestedBindingRedirects.cache
+C:\Users\artem\Documents\SQLDataBase\SQLDataBase\obj\Debug\SQLDataBase.csproj.CoreCompileInputs.cache
+C:\Users\artem\Documents\SQLDataBase\SQLDataBase\bin\Debug\SQLDataBase.exe.config
+C:\Users\artem\Documents\SQLDataBase\SQLDataBase\bin\Debug\SQLDataBase.exe
+C:\Users\artem\Documents\SQLDataBase\SQLDataBase\bin\Debug\SQLDataBase.pdb
+C:\Users\artem\Documents\SQLDataBase\SQLDataBase\obj\Debug\SQLDataBase.exe
+C:\Users\artem\Documents\SQLDataBase\SQLDataBase\obj\Debug\SQLDataBase.pdb
