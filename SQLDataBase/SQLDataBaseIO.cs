@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Odbc;
+﻿using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace SQLDataBase
@@ -34,7 +31,7 @@ namespace SQLDataBase
 
         public SQLTable CreateTable(string tableName, params string[] columns)
         {
-            var table = SQLTable.CreateSQLTable(_connection, "Goods", columns); 
+            var table = SQLTable.CreateSQLTable(_connection, tableName, columns); 
             Tables.Add(table);
             return table;
         }

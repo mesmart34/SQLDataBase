@@ -17,10 +17,7 @@ namespace SQLDataBase
             var query = @"CREATE TABLE " + name + " (" + string.Join(", ", columns) + ");";
             var command = new SqlCommand(query, connection);
             command.ExecuteNonQuery();
-            var table = new SQLTable();
-            table._connection = connection;
-            table.Name = name;
-            table.ColumnsName = columns;
+            var table = LoadSQLTable(connection, name);
             return table;
         }
 
@@ -46,6 +43,14 @@ namespace SQLDataBase
             return table;
         }
 
+        public void UpdateWhole(List<List<object>> data)
+        {
+            Clear();
+            foreach(var row in data)
+            {
+                Append(row);
+            }
+        }
 
         public IList<IList<object>> Read(string condition = "")
         {
@@ -84,14 +89,21 @@ namespace SQLDataBase
 
         public void Update(string condition, List<object> data, params string[] rowNames)
         {
-            var query = @"UPDATE " + Name + " SET(@" + string.Join(", @", rowNames) + ") WHERE " + condition + ";";
+            var set = " SET ";
+            for(int i = 0; i < rowNames.Length; i++)
+            {
+                if(i != 0)
+                    set += ", ";
+                set += rowNames[i] + " = @" + rowNames[i];
+            }
+            var query = @"UPDATE " + Name + set + " WHERE " + condition + ";";
             var command = new SqlCommand(query, _connection);
             for (var i = 0; i < data.Count; i++)
             {
                 var rowName = "@" + rowNames[i];
                 command.Parameters.AddWithValue(rowName, data[i]);
             }
-            int rows = command.ExecuteNonQuery();
+            command.ExecuteNonQuery();
         }
 
 

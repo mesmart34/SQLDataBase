@@ -15,21 +15,27 @@ namespace SQLDataBase
         {
             var dataBase = new SQLDataBaseIO("SQLEXPRESS", "TestDataBase");
             //var table = dataBase.ReadAll();
-            var data = new List<object> { "Burger", "Cola" };
+            var data = new List<object> { 3, "Artyom", "Red" };
             //dataBase.Write("TestTable", data);
             //var linkerTable = dataBase.Read("PizdaTable");
-            //Console.WriteLine(dataBase.IsTableExists("Goo1ds"));
-            SQLTable table = dataBase.LoadTable("Goods");
-            table = dataBase.LoadTable("Goods");
-            table.Clear();
-            table.Append(data);
+            /*if (dataBase.IsTableExists("Students"))
+            {
+                dataBase.DeleteTable("Students");
+            }
+*//*if (dataBase.IsTableExists("Students"))
+            {
+                dataBase.DeleteTable("Students");
+            }
+*/
+            /*SQLTable table = dataBase.CreateTable("Students", "Id int", "Name text", "State text");*/
+            SQLTable table = dataBase.LoadTable("Students");
+            table.Update("Id = 1", data, "Id", "Name", "State");
             var result = table.Read();
-            dataBase.DeleteTable("Goods");
             //dataBase.Append("TestCreateTable", data, "First", "Second");
-            
+
             //dataBase.Update("TestCreateTable", "First = Ekimov", data, "First", "Second");
             //dataBase.ClearSheet("PizdaTable");
-            
+
             Console.ReadLine();
         }
     }
